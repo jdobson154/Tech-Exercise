@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="/static/global.css">
+        <title>Insert</title>
+    </head>
+    <body>
+        <button class="back"><a href="/">Back</a></button>
+        <h1 class="title">Insert Data</h1>
+
+        <form action="/insert-submit" method="POST">
+            <label for="insertTournament">Tournament:</label><br>
+            <input type="text" name="insertTournament" id="insertTournament" required><br>
+            
+
+            <label for="insertPlayer1">Player 1:</label><br>
+            <input type="text" name="insertPlayer1" id="insertPlayer1" required><br>
+            
+
+            <label for="insertPlayer2">Player 2:</label><br>
+            <input type="text" name="insertPlayer2" id="insertPlayer2" required><br>
+            
+
+            <label for="insertScore">Score:</label><br>
+            <select name="insertScore" id="insertScore">
+                <option value="3-0">3-0</option>
+                <option value="3-1">3-1</option>
+                <option value="3-2">3-2</option>
+                <option value="2-0">2-0</option>
+                <option value="2-1">2-1</option>
+            </select><br>
+            
+
+            <label for="insertWinner">Winner:</label><br>
+            <input type="text" name="insertWinner" id="insertWinner" required><br>
+            
+
+            <label for="insertBracket">Bracket:</label><br>
+            <select name="insertBracket" id="insertBracket">
+                <option value="Round 1 Pools">R1 Pools</option>
+                <option value="Round 2 Pools">R2 Pools</option>
+                <option value="Winners Top 64">Winners Top 64</option>
+                <option value="Losers Top 64">Losers Top 64</option>
+                <option value="Winners Quarter-Finals">Winners Quarter-Finals</option>
+                <option value="Losers Quarter-Finals">Losers Quarter-Finals</option>
+                <option value="Winners Semi-Finals">Winners Semi-Finals</option>
+                <option value="Losers Semi-Finals">Losers Semi-Finals</option>
+                <option value="Winners Finals">Winners Finals</option>
+                <option value="Losers Finals">Losers Finals</option>
+                <option value="Grand Finals">Grand Finals</option>
+                <option value="Grand Finals Reset">Grand Finals Reset</option>
+            </select><br>
+
+            <input type="submit" class="submit" value="Create Entry">
+            <br><br>
+            {% block content %}
+            {% endblock %}
+
+        </form>
+    </body>
+</html>

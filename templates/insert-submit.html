@@ -1,0 +1,17 @@
+{% extends 'insert.html' %}
+{% block content %}
+    {% if data != 'error' %}
+        <h4>Successfully created entry:</h4>
+        <ul>
+            <li>ID: {{ data[0] }}</li>
+            <li>Tournament: {{ data[1] }}</li>
+            <li>Player 1: {{ data[2] }}</li>
+            <li>Player 2: {{ data[3] }}</li>
+            <li>Score: {{ data[4] }}</li>
+            <li>Winner: {{ data[5] }}</li>
+            <li>Bracket: {{ data[6] }}</li>
+        </ul>
+    {% else %}
+        <h4 style="color: red;">There was an error with your entry.<br>Please try again.</h4>
+    {% endif %}
+{% endblock %}
