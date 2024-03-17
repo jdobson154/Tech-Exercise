@@ -117,4 +117,4 @@ def insertSubmit():
         return render_template('insert-submit.html', data = 'error')
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', port = 11278, debug=True)
+    app.run(host = '0.0.0.0', port = 11278)
