@@ -44,6 +44,7 @@ def search():
 
 @app.route('/search-submit', methods=['POST'])
 def searchSubmit():
+    
     if request.method == 'POST':
         ID = request.form['searchID']
         if ID:
@@ -82,8 +83,12 @@ def searchSubmit():
             conditions.append(f" bracket = '{bracket}'")
             
         sql_query += " AND ".join(conditions)
-        
         cursor = db.cursor()
+        
+        if sql_query == 'SELECT * FROM ssbmTable WHERE':
+            cursor.execute("SELECT * FROM ssbmTable")
+            return render_template('search.html', data=cursor.fetchall())
+        
         cursor.execute(sql_query)
         data = cursor.fetchall()
         cursor.close()
