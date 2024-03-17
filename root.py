@@ -8,10 +8,9 @@ bootstrap = Bootstrap(app)
 db = mysql.connector.connect(
     host="localhost",
     user="Jack",
-    password="Tor24DwaSun22Sun",
+    password="password",
     database="mydatabase"
 )
-
 
 @app.route('/')
 def home():
@@ -51,8 +50,6 @@ def searchSubmit():
             try:
                 ID = int(ID)
             except ValueError:
-                # Handle the case where ID is not a valid integer
-                # For example, you could set ID to None or another default value
                 ID = None
         tournament = request.form['searchTournament']
         p1 = request.form['searchPlayer1']
@@ -92,8 +89,6 @@ def searchSubmit():
         cursor.close()
     
         return render_template('search-submit.html', data=data)
-        
-
 
 @app.route('/insert')
 def insert():
